@@ -3,7 +3,7 @@
 using namespace std;
 
 
-//Конструктор по умолчанию
+//ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
 template <typename T>
 matrix<T>::matrix() :rows(0), columns(0), _matrix(nullptr)
 {
@@ -12,7 +12,7 @@ matrix<T>::matrix() :rows(0), columns(0), _matrix(nullptr)
 
 
 
-//конструктор с параметрами кол-во строк, кол-во столбцов
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ ГЄГ®Г«-ГўГ® Г±ГІГ°Г®ГЄ, ГЄГ®Г«-ГўГ® Г±ГІГ®Г«ГЎГ¶Г®Гў
 template <typename T>
 matrix<T>::matrix(int _rows, int _columns): rows(_rows), columns(_columns)
 {
@@ -33,7 +33,7 @@ matrix<T>::matrix(T **matr, unsigned int _m_rows, unsigned int _m_columns) : _ma
 }
 
 
-//конструктор случайной матрицы
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г±Г«ГіГ·Г Г©Г­Г®Г© Г¬Г ГІГ°ГЁГ¶Г»
 template <typename T>
 matrix<T>::matrix(T **matr, unsigned int _m_rows, unsigned int _m_columns,int time) : _matrix(new T *[_m_rows]), rows(_m_rows), columns(_m_columns) {
 
@@ -49,7 +49,7 @@ matrix<T>::matrix(T **matr, unsigned int _m_rows, unsigned int _m_columns,int ti
 
 
 
-//конструктор (глубокого) копирования 
+//ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° (ГЈГ«ГіГЎГ®ГЄГ®ГЈГ®) ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГї 
 template <typename T>
 matrix<T>::matrix(const matrix<T> & matrix): rows(matrix.rows), columns(matrix.columns)
 {
@@ -59,7 +59,7 @@ matrix<T>::matrix(const matrix<T> & matrix): rows(matrix.rows), columns(matrix.c
 
 
 
-// Заполение матрицы из файла 
+// Г‡Г ГЇГ®Г«ГҐГ­ГЁГҐ Г¬Г ГІГ°ГЁГ¶Г» ГЁГ§ ГґГ Г©Г«Г  
 template <typename T>
 void matrix<T>::get_from_file(string name)
 {
@@ -73,14 +73,14 @@ void matrix<T>::get_from_file(string name)
 		fin.close();
 	}
 	else {
-		cout << "Ошибка, попробуйте еще раз";
+		cout << "ГЋГёГЁГЎГЄГ , ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГҐГ№ГҐ Г°Г Г§";
 		exit(100);
 	}
 }
 
 
 
-// деструктор
+// Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 template <typename T>
 matrix<T>::~matrix()
 {
@@ -92,7 +92,7 @@ matrix<T>::~matrix()
 
 
 
-// печать матрицы
+// ГЇГҐГ·Г ГІГј Г¬Г ГІГ°ГЁГ¶Г»
 template <typename T>
 void matrix<T>::print_matrix() const
 {
@@ -107,14 +107,14 @@ void matrix<T>::print_matrix() const
 template <typename T>
 void matrix<T>::get_line(int k)
 {
-	int *row_matrix;  //указатель
+	int *row_matrix;  //ГіГЄГ Г§Г ГІГҐГ«Гј
 	row_matrix = _matrix[k - 1];
 	for (int i = 0; i < columns; i++)
 		cout << " " << row_matrix[i];
 }
 
 
-// копирование матрицы
+// ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГҐ Г¬Г ГІГ°ГЁГ¶Г»
 template <typename T>
 void matrix<T>::copy_matrix(const matrix<T> & matrix)
 {
@@ -125,7 +125,7 @@ void matrix<T>::copy_matrix(const matrix<T> & matrix)
 
 
 
-// перегрузка оператора = 
+// ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  = 
 template <typename T>
 matrix<T> & matrix<T>::operator=(const matrix<T> & matrix)
 {
@@ -134,7 +134,7 @@ matrix<T> & matrix<T>::operator=(const matrix<T> & matrix)
 }
 
 
-// передача номера строки, столбца и значения
+// ГЇГҐГ°ГҐГ¤Г Г·Г  Г­Г®Г¬ГҐГ°Г  Г±ГІГ°Г®ГЄГЁ, Г±ГІГ®Г«ГЎГ¶Г  ГЁ Г§Г­Г Г·ГҐГ­ГЁГї
 template <typename T>
 void matrix<T>::set(int row, int columns, int set)
 {
@@ -142,7 +142,7 @@ void matrix<T>::set(int row, int columns, int set)
 }
 
 
-// взятие элемента 
+// ГўГ§ГїГІГЁГҐ ГЅГ«ГҐГ¬ГҐГ­ГІГ  
 template <typename T>
 int matrix<T>::get(int row, int columns) const
 {
@@ -151,7 +151,7 @@ int matrix<T>::get(int row, int columns) const
 
 
 
-// сумма построчно
+// Г±ГіГ¬Г¬Г  ГЇГ®Г±ГІГ°Г®Г·Г­Г®
 template <typename T>
 void matrix<T>::get_sum_r(const matrix<T> &matrix_1, const matrix<T> &matrix_2, int i)
 {
@@ -161,32 +161,38 @@ void matrix<T>::get_sum_r(const matrix<T> &matrix_1, const matrix<T> &matrix_2, 
 
 
 
-//перегрузка оператора + 
+//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  + 
 template <typename T>
 matrix<T> operator+(const matrix<T> &matrix_1, const matrix<T> &matrix_2)
 {
 
-	matrix matrix(matrix_1.rows, matrix_1.columns);//создаем новую матрицу 
-	if (matrix_1.columns != matrix_2.columns || matrix_1.rows != matrix_2.rows) {
-		throw "Несоответствие размеров матриц\n";
-	}
-	for (int i = 0; i < matrix.rows; i++)
+	matrix matrix(matrix_1.rows, matrix_1.columns);//Г±Г®Г§Г¤Г ГҐГ¬ Г­Г®ГўГіГѕ Г¬Г ГІГ°ГЁГ¶Гі 
+	try {
+		if (matrix_1.columns != matrix_2.columns || matrix_1.rows != matrix_2.rows) {
+		throw 404;
+		}
+		for (int i = 0; i < matrix.rows; i++)
 		matrix.get_sum_r(matrix_1, matrix_2, i);
+	}
+	catch (int a){
+		cout<<"error" << a<< endl;
+	}
+	
 	return matrix;
 };
 
 
-//перегрузка оператора * 
+//ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  * 
 template <typename T>
 matrix<T> operator*(const matrix<T> &matrix_1, const matrix<T> &matrix_2) {
 	if (matrix_1._matrix == nullptr || matrix_1.rows == 0 || matrix_1.columns == 0) {
-		throw "Первая матрица пустая\n";
+		throw "ГЏГҐГ°ГўГ Гї Г¬Г ГІГ°ГЁГ¶Г  ГЇГіГ±ГІГ Гї\n";
 	}
 	if (matrix_2._matrix == nullptr || matrix_2.rows == 0 || matrix_2.columns == 0) {
-		throw "Вторая матрица пустая\n";
+		throw "Г‚ГІГ®Г°Г Гї Г¬Г ГІГ°ГЁГ¶Г  ГЇГіГ±ГІГ Гї\n";
 	}
 	if (matrix_1.columns != matrix_2.rows) {
-		throw "Несоответствие размеров матриц\n";
+		throw "ГЌГҐГ±Г®Г®ГІГўГҐГІГ±ГІГўГЁГҐ Г°Г Г§Г¬ГҐГ°Г®Гў Г¬Г ГІГ°ГЁГ¶\n";
 	}
 	matrix matrix(matrix_1.rows, matrix_1.columns);
 	for (int i = 0; i < matrix.rows; i++)
@@ -194,7 +200,7 @@ matrix<T> operator*(const matrix<T> &matrix_1, const matrix<T> &matrix_2) {
 	return matrix;
 };
 
-// количество строк
+// ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г®ГЄ
 template <typename T>
 int matrix<T>::get_num_rows() const
 {
@@ -202,7 +208,7 @@ int matrix<T>::get_num_rows() const
 }
 
 
-// Произведение
+// ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ
 template <typename T>
 void matrix<T>::get_multi_r(const matrix<T> &matrix_1, const matrix<T> &matrix_2, int i)
 {
@@ -220,7 +226,7 @@ void matrix<T>::get_multi_r(const matrix<T> &matrix_1, const matrix<T> &matrix_2
 
 
 
-//Количество столбцов
+//ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ®Г«ГЎГ¶Г®Гў
 template <typename T>
 int matrix<T>::get_num_cols() const
 {
@@ -228,7 +234,7 @@ int matrix<T>::get_num_cols() const
 }
 
 
-// выделяем память
+// ГўГ»Г¤ГҐГ«ГїГҐГ¬ ГЇГ Г¬ГїГІГј
 template <typename T>
 void matrix<T>::create_memory()
 {
@@ -240,14 +246,14 @@ void matrix<T>::create_memory()
 
 
 
-// перегрузка оператора [] 
+// ГЇГҐГ°ГҐГЈГ°ГіГ§ГЄГ  Г®ГЇГҐГ°Г ГІГ®Г°Г  [] 
 template <typename T>
 T* matrix<T>::operator [] (int i) const
 {
 	if (rows == 0 || _matrix == nullptr) {
-		throw "Пустая матрица\n";
+		throw "ГЏГіГ±ГІГ Гї Г¬Г ГІГ°ГЁГ¶Г \n";
 	}
-	int *Getline = new T[columns];// одномерный массив для хранения столбцов
+	int *Getline = new T[columns];// Г®Г¤Г­Г®Г¬ГҐГ°Г­Г»Г© Г¬Г Г±Г±ГЁГў Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г±ГІГ®Г«ГЎГ¶Г®Гў
 	for (int j = 0; j < columns; j++)
 		Getline[j] = _matrix[i - 1][j];
 	return Getline;
@@ -271,7 +277,7 @@ std::istream & operator>>(std::istream & input, matrix<T> &__matrix) {
 	for (int i = 0; i < __matrix.rows; ++i) {
 		for (int j = 0; j < __matrix.columns; ++j) {
 			if (!(input >> __matrix.__matrix[i][j])) {
-				throw "Ошибка в потоковм вводе\n";
+				throw "ГЋГёГЁГЎГЄГ  Гў ГЇГ®ГІГ®ГЄГ®ГўГ¬ ГўГўГ®Г¤ГҐ\n";
 			}
 		}
 	}
